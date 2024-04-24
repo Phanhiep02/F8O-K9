@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .flex {
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        text-align: center;
+      }
+
+      /* input {
+        width: 200px;
+        height: 20px;
+      } */
+      select {
+        margin-left: 48px;
+        width: 209px;
+        height: 28px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <form action="">
+        <div class="flex">
+          <label for="name">Username: </label>
+          <input style="margin-left: 50px" type="text" name="name" id="name" />
+          <br />
+        </div>
+        <div class="flex">
+          <label for="password">Password: </label>
+          <input
+            style="margin-left: 53px"
+            type="password"
+            name="password"
+            id="password"
+          />
+          <br />
+        </div>
+        <div class="flex">
+          <label style="width: 50px" for="name">City of Employment: </label>
+          <input style="margin-left: 70px" type="text" name="name" id="name" />
+          <br />
+        </div>
+        <div class="flex">
+          <label for="server">Web server</label>
+          <select name="server" id="server">
+            <option value="0">- Choose a server -</option>
+            <option value="1">Hà Nội</option>
+            <option value="2">Đà Nẵng</option>
+            <option value="3">Hồ chí minh</option>
+          </select>
+          <br />
+        </div>
+        <div class="flex">
+          <label style="width: 91px">please specify your role</label>
+          <div>
+            <div>
+              <input
+                style="margin-left: 13px"
+                type="radio"
+                name="gender"
+                value="0"
+              />
+              Admin
+            </div>
+
+            <div>
+              <input
+                style="margin-left: 28px"
+                type="radio"
+                name="gender"
+                value="1"
+              />
+              Engineer
+            </div>
+
+            <div>
+              <input
+                style="margin-left: 28px"
+                type="radio"
+                name="gender"
+                value="2"
+              />
+              Manager
+            </div>
+
+            <div>
+              <input
+                style="margin-left: 8px"
+                type="radio"
+                name="gender"
+                value="3"
+              />
+              Guest
+            </div>
+          </div>
+        </div>
+        <div class="flex">
+          <label style="width: 91px">Signle Sign-on following</label>
+          <div>
+            <div>
+              <input style="margin-left: -19px" type="checkbox" value="0" />
+              Mail
+            </div>
+
+            <div>
+              <input style="margin-left: -3px" type="checkbox" value="1" />
+              Payroll
+            </div>
+
+            <div>
+              <input style="margin-left: 28px" type="checkbox" value="2" />
+              Self-service
+            </div>
+          </div>
+        </div>
+        <div style="margin-left: 100px; margin-top: 20px">
+          <button>Login</button>
+          <button type="reset">reset</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

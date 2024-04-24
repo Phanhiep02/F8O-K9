@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        width: 400px;
+      }
+      label {
+        font-weight: 800;
+        font-size: 18px;
+      }
+      input {
+        width: 200px;
+        height: 25px;
+        margin-top: 10px;
+      }
+      select {
+        width: 210px;
+        height: 31px;
+        margin-top: 10px;
+      }
+      .flex {
+        display: flex;
+        column-gap: 30px;
+      }
+      span {
+        color: #918b8b;
+      }
+      button {
+        margin-top: 20px;
+        width: 450px;
+        height: 45px;
+        background: green;
+        color: white;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Try a free sample</h1>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
+        aliquid officiis iste ad eveniet facere a nulla laudantium quos,
+        suscipit temporibus perferendis natus quasi autem modi neque praesentium
+        perspiciatis totam.
+      </p>
+    </header>
+    <main>
+      <form action="">
+        <div class="flex">
+          <div>
+            <div>
+              <label for="nameF">First Name</label>
+              <br />
+              <input type="text" name="" id="nameF" placeholder="John" />
+            </div>
+            <br />
+            <div>
+              <label for="email">Email Address</label>
+              <br />
+              <input
+                type="email"
+                name=""
+                id="email"
+                placeholder="john@example.com"
+              />
+            </div>
+            <br />
+            <div>
+              <label for="city">City</label>
+              <br />
+              <input type="text" name="" id="city" placeholder="London" />
+            </div>
+            <br />
+            <div>
+              <label for="zip">ZIP code</label>
+              <br />
+              <input type="text" name="" id="zip" placeholder="EC2Y8DS" />
+            </div>
+          </div>
+          <div>
+            <div>
+              <label for="nameL">Last Name</label>
+              <br />
+              <input type="text" name="" id="nameL" placeholder="Smith" />
+            </div>
+            <br />
+            <div>
+              <label for="Address">Address </label>
+              <br />
+              <input type="text" name="" id="Address" />
+            </div>
+            <br />
+            <div>
+              <label for="state">State <span>(optional)</span></label>
+              <br />
+              <input type="text" name="" id="state" />
+            </div>
+            <br />
+            <div>
+              <label for="provinces">Country</label>
+              <br />
+              <select name="provinces" id="provinces">
+                <option value="0">Country</option>
+                <option value="1" selected>United kingdom</option>
+                <option value="2">Chealsea</option>
+                <option value="3">ManciTy</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button>SEND ME FREE COFFEE</button>
+      </form>
+    </main>
+  </body>
+</html>
