@@ -1,0 +1,29 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.quete {
+  margin-top: 10px;
+  width: 50%;
+}
+.quete::before {
+  content: open-quote;
+  background-color: #ccc;
+  padding: 10px 24px;
+  font-size: 45px;
+  border-radius: 50%;
+}
+
+.quete::after {
+  content: close-quote;
+  float: right;
+  background-color: #ccc;
+  padding: 10px 24px;
+  font-size: 45px;
+  border-radius: 50%;
+}
+
+.quete blockquote {
+  margin: 0 80px;
+}

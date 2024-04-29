@@ -1,0 +1,26 @@
+h1 {
+  color: #6c6767;
+}
+.title-map {
+  color: #6c6767;
+  background-color: #b1b1b1c9;
+}
+.sub-title a {
+  color: #4240e8;
+}
+.desc {
+  border: 1px solid;
+  padding: 8px 23px;
+  height: 109px;
+  border-radius: 14px;
+}
+.desc a {
+  color: blue;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}
+.flex img {
+  padding-top: 4px;
+}
