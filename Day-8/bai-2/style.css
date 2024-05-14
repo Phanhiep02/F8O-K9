@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Asap", sans-serif;
+}
+.header {
+  position: relative;
+  height: 400px;
+}
+.header .img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.profile {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+}
+.profile-logo {
+  background-color: #fff;
+  width: 300px;
+  border-radius: 5px;
+  padding: 50px 30px 20px 13px;
+  cursor: pointer;
+}
+.profile-logo .logo {
+  /* margin-left: 15px; */
+}
+.profile-content {
+  margin-left: 40px;
+  margin-top: 20px;
+  color: #fff;
+}
+.profile-heading-sub {
+  display: flex;
+  margin-top: 40px;
+}
+.profile-heading-sub p:nth-child(2) {
+  margin-left: 30px;
+}
+.profile-heading-sub p span {
+  font-size: 28px;
+  font-weight: 700;
+}
+.nav {
+  margin-top: 20px;
+}
+.nav-list {
+  display: flex;
+  margin-left: 1100px;
+}
+.item {
+  position: relative;
+  list-style: none;
+  margin-left: 20px;
+}
+.item:hover .dot {
+  display: block;
+}
+.link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  /* background-color: aqua; */
+  display: block;
+}
+.dot {
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  display: none;
+}
