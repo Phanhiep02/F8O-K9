@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #313642;
+}
+
+.content {
+  width: 1140px;
+  margin: 0 auto;
+}
+
+.mail {
+  position: relative;
+  width: 320px;
+  height: 300px;
+  margin: auto;
+  transition: translate 1s ease;
+  overflow: hidden;
+}
+.shadow {
+  width: 300px;
+  height: 0px;
+  box-shadow: 0 0 55px 10px #000;
+  transform: rotateX(70deg);
+  transition: all 0.5s ease;
+  margin: 150px auto;
+}
+
+.mail:hover ~ .shadow {
+  scale: 0.5 1;
+}
+
+.mail:hover {
+  translate: 0 100px;
+}
+
+.mail:hover .mail-open {
+  bottom: 160px;
+  transition-delay: 0.2s;
+}
+
+.mail:hover .letter {
+  height: 300px;
+  opacity: 1;
+  transition-delay: 0.5s;
+}
+
+.letter {
+  position: absolute;
+  width: 260px;
+  height: 50px;
+  background-color: #fff;
+  left: 30px;
+  bottom: 0;
+  z-index: 2;
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+
+.custom {
+  height: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+
+.custom-sub {
+  display: inline-block;
+  width: 16px;
+  height: 20px;
+  background-color: #c85a5c;
+  transform: skew(-30deg);
+  padding: 8px;
+}
+
+.line-1 {
+  position: absolute;
+  width: 150px;
+  height: 20px;
+  background-color: #c85a5c;
+  left: 10px;
+  top: 50px;
+}
+
+.line-2 {
+  position: absolute;
+  width: 100px;
+  height: 20px;
+  background-color: #c85a5c;
+  left: 10px;
+  top: 90px;
+}
+
+.radius {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #dfc1c1;
+  top: 150px;
+  right: 20px;
+}
+
+.mail-open {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  border-top: 80px solid transparent;
+  border-bottom: 80px solid #cf4a40;
+  bottom: 0;
+  transition: bottom 0.3s ease;
+}
+
+.mail-left {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 160px solid #e1514b;
+  border-right: 160px solid transparent;
+  border-top: 80px solid transparent;
+  border-bottom: 80px solid transparent;
+  left: 0;
+  bottom: 0;
+  z-index: 3;
+}
+
+.mail-top {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 160px solid transparent;
+  border-right: 160px solid transparent;
+  border-top: 80px solid #cf4a40;
+  border-bottom: 80px solid transparent;
+  bottom: 0;
+  z-index: 1;
+}
+
+.mail-bot {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 160px solid transparent;
+  border-right: 160px solid #e85f57;
+  border-top: 80px solid transparent;
+  border-bottom: 80px solid #e85f57;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+}
