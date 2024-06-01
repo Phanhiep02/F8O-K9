@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="grid.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <div class="landing">
+          <input type="radio" name="toggle-form" id="login" checked hidden />
+          <input type="radio" name="toggle-form" id="register" hidden />
+          <div class="row landing__sub">
+            <div class="col-lg-6">
+              <div class="landing__content">
+                <span class="landding__span">WELCOME TO</span>
+                <h1 class="landing__heading">VIKINGER</h1>
+                <p class="landing__desc">
+                  The next generation social network & community! Connect with
+                  your friends and play with our quests and badges gamification
+                  system!
+                </p>
+                <div class="landing__toggle">
+                  <label for="login" class="login active">Login</label>
+                  <label for="register" class="register">Register</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="landding__form">
+                <!-- login -->
+                <div class="form__login">
+                  <img src="./rocket.webp" alt="" class="rock" />
+                  <h2 class="form__login-heading">Account Login</h2>
+                  <form>
+                    <div class="form__item">
+                      <label for="form-desc">
+                        <input type="text" id="form-desc" />
+                        <span>Username or Email</span>
+                      </label>
+                    </div>
+                    <div class="form__item">
+                      <label for="form-desc" class="password">
+                        <input type="text" id="form-desc" />
+                        <span>Password</span>
+                      </label>
+                    </div>
+                    <div class="form__remember">
+                      <input type="checkbox" id="remember" hidden />
+                      <label for="remember" class="form__customs"
+                        >remember</label
+                      >
+                      <span>Forgot Password</span>
+                    </div>
+                    <div class="form__btn">
+                      <a href="#">Login to your Account</a>
+                    </div>
+                  </form>
+                  <div class="form__footer">
+                    <p class="form__footer-desc">
+                      Login With your social Account
+                    </p>
+                    <div class="form__footer-icon">
+                      <i class="fa-brands fa-facebook"></i>
+                      <i class="fa-brands fa-twitter"></i>
+                      <i class="fa-brands fa-twitch"></i>
+                      <i class="fa-brands fa-youtube"></i>
+                    </div>
+                  </div>
+                </div>
+                <!-- register -->
+                <div class="form__register">
+                  <img src="./rocket.webp" alt="" class="rock" />
+                  <h2 class="form__login-heading">Create Account</h2>
+                  <form>
+                    <div class="form__item">
+                      <label for="form-desc">
+                        <input type="text" id="form-desc" />
+                        <span>Your Email</span>
+                      </label>
+                    </div>
+                    <div class="form__item">
+                      <label for="form-desc">
+                        <input type="text" id="form-desc" />
+                        <span>UserName</span>
+                      </label>
+                    </div>
+                    <div class="form__item">
+                      <label for="form-desc">
+                        <input type="text" id="form-desc" />
+                        <span>Password</span>
+                      </label>
+                    </div>
+                    <div class="form__item">
+                      <label for="form-desc">
+                        <input type="text" id="form-desc" />
+                        <span>Repeat Password</span>
+                      </label>
+                    </div>
+                    <div class="form__remember">
+                      <input type="checkbox" id="remember" hidden />
+                      <label for="remember" class="form__customs"
+                        >Send me news and updates via email</label
+                      >
+                    </div>
+                    <div class="form__btn">
+                      <a href="#">Register Now!</a>
+                    </div>
+                  </form>
+                  <div class="form__footer">
+                    <p class="form__footer-desc-register">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                      Sunt, est. Aspernatur autem et distinctio exercitationem
+                      temporibus nobis ad, praesentium ducimus?
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
