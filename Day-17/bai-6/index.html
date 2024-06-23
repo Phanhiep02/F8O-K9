@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .table-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .table {
+        border: 1px solid black;
+        margin: 10px;
+        padding: 10px;
+        width: 150px;
+      }
+      .table h3 {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      document.write('<div class="table-container">');
+      for (var i = 1; i <= 10; i++) {
+        document.write('<div class="table">');
+        document.write("<h3>Bảng cửu chương " + i + "</h3>");
+        for (var j = 1; j <= 10; j++) {
+          document.write(i + " x " + j + " = " + i * j + "<br>");
+        }
+        document.write("</div>");
+      }
+      document.write("</div>");
+    </script>
+  </body>
+</html>
