@@ -81,21 +81,26 @@ if (step > 0) {
   if (step <= 50) {
     bill = step * step1;
   } else if (step >= 51 && step <= 100) {
-    bill = step * step2 - 50 * step1;
+    bill = step1 * 50 + step2 * (step - 50);
   } else if (step >= 101 && step <= 200) {
-    bill = step * step3 - 50 * step1 - 50 * step2;
+    bill = step1 * 50 + step2 * 50 + step3 * (step - 100);
   } else if (step >= 201 && step <= 300) {
-    bill = step * step4 - 50 * step1 - 50 * step2 - 100 * step3;
+    bill = step1 * 50 + step2 * 50 + step3 * 100 + step4 * (step - 200);
   } else if (step >= 301 && step <= 400) {
-    bill = step * step5 - 50 * step1 - 50 * step2 - 100 * step3 - 100 * step4;
+    bill =
+      step1 * 50 +
+      step2 * 50 +
+      step3 * 100 +
+      step4 * 100 +
+      step5 * (step - 300);
   } else {
     bill =
-      step * step6 -
-      50 * step1 -
-      50 * step2 -
-      100 * step3 -
-      100 * step4 -
-      100 * step5;
+      step1 * 50 +
+      step2 * 50 +
+      step3 * 100 +
+      step4 * 100 +
+      step5 * 100 +
+      step6 * (step - 400);
   }
 }
 console.log(`Bài 2 : Tiền điện của bạn là : ${bill} đồng`);
