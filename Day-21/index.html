@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      var originalContent = `<h1> Lorem ipsum dolor sit amet </h1>`;
+      var updatedContent = " ";
+      var indexCount = 0;
+      var startPosition, endPosition;
+      var spacePositions = [];
+
+      for (var index = 0; index < originalContent.length; index++) {
+        if (originalContent[index] === " ") {
+          spacePositions.push(index);
+        }
+      }
+      console.log(spacePositions);
+
+      var timeCounter = 0;
+      var intervalId = setInterval(function () {
+        if (timeCounter >= spacePositions.length - 1) {
+          timeCounter = 0;
+        }
+        var startPosition = spacePositions[timeCounter];
+        var endPosition =
+          spacePositions[timeCounter + 1] || originalContent.length; // Ensure endPosition is defined
+        var updatedContent =
+          originalContent.slice(0, startPosition) +
+          `<span>` +
+          originalContent.slice(startPosition, endPosition) +
+          `</span>` +
+          originalContent.slice(endPosition);
+        document.write(updatedContent);
+        timeCounter++;
+      }, 1000);
+    </script>
+  </body>
+</html>
