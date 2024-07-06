@@ -89,3 +89,6 @@ function sortNumber(arr) {
 
 var numbers = [10, 7, 15, 23, 4, 19, 3, 6];
 sortNumber(numbers);
+
+var a = [1, 2, 3, 4];
+var b = [2, 7, 9, 1];
