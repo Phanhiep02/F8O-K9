@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <h1>Tin tức dân trí</h1>
+    <button class="btn-login">Đăng nhập</button>
+    <div class="form-login">
+      <div class="from-center close">
+        <div class="form-header">
+          <h1>Dân chí</h1>
+          <i class="fa-solid fa-x close-login"></i>
+        </div>
+        <div class="form__header">
+          <a href="" class="btn active btn-login">Đăng nhập</a>
+          <a href="" class="btn btn-register">Đăng ký</a>
+        </div>
+        <!-- đăng nhập -->
+        <form action="" class="form form__login">
+          <div class="form-input">
+            <div class="email-inner">
+              <input
+                type="text"
+                placeholder="nhập email của bạn"
+                class="email"
+              />
+
+              <span class="blur-email">Vui lòng nhập thông tin</span>
+            </div>
+
+            <div class="password-hidden">
+              <input
+                type="password"
+                placeholder="nhập mật khẩu "
+                class="password"
+              />
+              <button href="" class="btn-hidden">Hiện</button>
+              <span class="blur-password">Vui lòng nhập thông tin</span>
+            </div>
+            <button class="btn-action">Đăng nhập</button>
+          </div>
+        </form>
+        <!-- đăng kí -->
+        <form action="" class="form form-register">
+          <div class="form-input">
+            <div class="name-inner">
+              <input type="text" placeholder="Nhập họ tên" class="name" />
+
+              <span class="blur-name">Vui lòng nhập thông tin</span>
+            </div>
+            <div class="email-inner">
+              <input
+                type="text"
+                placeholder="nhập email của bạn"
+                class="email"
+              />
+
+              <span class="blur-email">Vui lòng nhập thông tin</span>
+            </div>
+
+            <div class="password-hidden">
+              <input
+                type="password"
+                placeholder="nhập mật khẩu "
+                class="password"
+              />
+              <button href="" class="btn-hidden">Hiện</button>
+              <span class="blur-password">Vui lòng nhập thông tin</span>
+            </div>
+
+            <button class="btn-action">Đăng ký</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="overlay-login"></div>
+      <div class="content"></div>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
