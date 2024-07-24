@@ -53,7 +53,12 @@
 .form__login.close {
   display: none;
 }
-
+.form.form-register {
+  display: none;
+}
+.form.form-register.open {
+  display: block;
+}
 .from-center {
   align-items: center;
   justify-content: center;
@@ -64,7 +69,7 @@
   padding-top: 20px;
   z-index: 99;
   width: 460px;
-  /* height: 410px; */
+  height: 510px;
   display: flex;
   flex-direction: column;
 }
@@ -74,8 +79,7 @@
 .from-center.open {
   display: block;
 }
-.form.form-register {
-}
+
 .form.form-close {
   display: none;
 }

@@ -28,22 +28,24 @@ btnActiveLogin.addEventListener("click", function (e) {
   btnActiveRegister.classList.remove("active");
   formRegisterClose.classList.add("close");
   formLoginClose.classList.remove("close");
+  formRegisterClose.classList.remove("open");
 });
 btnActiveRegister.addEventListener("click", function (e) {
   e.preventDefault();
   btnActiveRegister.classList.add("active");
   btnActiveLogin.classList.remove("active");
   formLoginClose.classList.add("close");
+  formRegisterClose.classList.add("open");
   formRegisterClose.classList.remove("close");
 });
 //  xử lí khi click vào đăng nhập
 btnLoginEl.addEventListener("click", function () {
   formLoginEl.classList.add("open");
 });
-// overlay
 closeLoginEl.addEventListener("click", function () {
   formLoginEl.classList.remove("open");
 });
+// overlay
 overlayLoginEl.addEventListener("click", function () {
   formLoginEl.classList.remove("open");
 });
