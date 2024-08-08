@@ -11,32 +11,32 @@ var tbody = table.querySelector("tbody");
 var cartTable = document.querySelector("#cart_table");
 var tbodyTable = cartTable.querySelector("tbody");
 
-// rende
+var updatedQuantities = {};
+
+// Rende
 var html = products
   .map(function (product, index) {
     return `
-        <tbody>
-          <tr data-index="${index}">
-            <td>${product.id}</td>
-            <td>${product.name}</td>
-            <td>${product.price}</td>
-            <td>
-              <input
-                type="number"
-                id="quantity_${product.id}"
-                value="${product.value}"
-                style="width: 90%; display: block; margin: 0 auto"
-              />
-              <button
-                type="button"
-                style="width: 100%"
-                id="add_to_cart_${product.id}"
-              >
-                Thêm vào giỏ
-              </button>
-            </td>
-          </tr>
-        </tbody>
+        <tr data-index="${index}">
+          <td>${product.id}</td>
+          <td>${product.name}</td>
+          <td>${product.price}</td>
+          <td>
+            <input
+              type="number"
+              id="quantity_${product.id}"
+              value="${product.value}"
+              style="width: 90%; display: block; margin: 0 auto"
+            />
+            <button
+              type="button"
+              style="width: 100%"
+              id="add_to_cart_${product.id}"
+            >
+              Thêm vào giỏ
+            </button>
+          </td>
+        </tr>
       `;
   })
   .join("");
@@ -44,6 +44,15 @@ tbody.innerHTML = html;
 
 // Show cart
 var showCart = function () {
+  if (carts.length === 0) {
+    tbodyTable.innerHTML = `
+      <tr>
+        <td colspan="6">Giỏ hàng không có sản phẩm</td>
+      </tr>
+    `;
+    return;
+  }
+
   var cartHTML = carts
     .map(function (cart, cartIndex) {
       return `
@@ -72,7 +81,7 @@ var showCart = function () {
   updateTotal();
 };
 
-// cnhat số lượng
+// doi so luong
 var updateTotal = function () {
   var totalQuantity = carts.reduce(function (sum, cart) {
     return sum + cart.value;
@@ -102,48 +111,88 @@ var updateTotal = function () {
   }
 };
 
-// thêm
+// add cart
 tbody.addEventListener("click", function (e) {
   e.preventDefault();
   if (e.target.localName === "button") {
     var row = e.target.closest("tr");
     var index = row.dataset.index;
     var valueInput = row.querySelector("input").value;
-    var product = products[index];
 
+    var quantity = parseInt(valueInput, 10);
+    if (
+      isNaN(quantity) ||
+      quantity <= 0 ||
+      valueInput.includes("+") ||
+      valueInput.includes("-") ||
+      valueInput === ""
+    ) {
+      alert("Vui lòng nhập một số nguyên dương hợp lệ cho số lượng.");
+      return;
+    }
+
+    var product = products[index];
     var existingProductIndex = carts.findIndex(function (cart) {
       return cart.id === product.id;
     });
 
     if (existingProductIndex !== -1) {
-      carts[existingProductIndex].value = Number(valueInput);
+      carts[existingProductIndex].value += quantity;
     } else {
-      var newProduct = { ...product, value: Number(valueInput) };
+      var newProduct = { ...product, value: quantity };
       carts.push(newProduct);
     }
 
     showCart();
   }
 });
-// cập nhật chưa hoàn thành
-// cartTable.addEventListener("change", function (e) {
-//   if (e.target.classList.contains("quantity")) {
-//     var index = e.target.dataset.id;
 
-//     showCart();
-//   }
-// });
+cartTable.addEventListener("change", function (e) {
+  if (e.target.classList.contains("quantity")) {
+    var index = e.target.dataset.id;
+    var valueInput = e.target.value;
 
-document.querySelector("#delete_cart").addEventListener("click", function () {
-  carts = [];
+    var quantity = parseInt(valueInput, 10);
+    if (
+      isNaN(quantity) ||
+      quantity <= 0 ||
+      valueInput.includes("+") ||
+      valueInput.includes("-") ||
+      valueInput === ""
+    ) {
+      alert("Vui lòng nhập một số nguyên dương hợp lệ cho số lượng.");
+      return;
+    }
+
+    updatedQuantities[index] = quantity;
+  }
+});
+
+// cap nhat gio
+document.querySelector("#update_cart").addEventListener("click", function () {
+  Object.keys(updatedQuantities).forEach(function (index) {
+    carts[index].value = updatedQuantities[index];
+  });
+  updatedQuantities = {};
   showCart();
 });
-// xóa mảng
+
+// xoa all
+document.querySelector("#delete_cart").addEventListener("click", function () {
+  if (confirm("Bạn có chắc chắn muốn xóa toàn bộ giỏ hàng?")) {
+    carts = [];
+    showCart();
+  }
+});
+
+// xoa
 cartTable.addEventListener("click", function (e) {
   if (e.target.classList.contains("delete-item")) {
-    var row = e.target.closest("tr");
-    var index = row.dataset.index;
-    carts.splice(index, 1);
-    showCart();
+    if (confirm("Bạn có chắc chắn muốn xóa sản phẩm này?")) {
+      var row = e.target.closest("tr");
+      var index = row.dataset.index;
+      carts.splice(index, 1);
+      showCart();
+    }
   }
 });
